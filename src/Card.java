@@ -1,13 +1,16 @@
 public class Card {
 
+	//SPECIFIC TO EACH DECK
 	public static int LIMIT = 0;
 	public static String[] CARDNAMES = new String[LIMIT];
 	
-	
+	//BASIC INFORMATION FOR EACH CARD
 	protected String name;
 	protected int cardID;
 	protected boolean reversed = false;
 	
+	
+	//CONSTRUCTORS
 	public Card(boolean useReversed, int limit, String[] cardNames) {
 		
 		cardID = (int)Math.floor(Math.random() * limit);
@@ -23,7 +26,9 @@ public class Card {
 		this(false, limit, cardNames);
 	}
 	
-	public String getName() {
+	
+	//GETTERS
+	protected String getName() {
 		return name;
 	}
 	
@@ -31,7 +36,7 @@ public class Card {
 		return cardID;
 	}
 
-	public boolean getReversed() {
+	protected boolean getReversed() {
 		return reversed;
 	}
 	

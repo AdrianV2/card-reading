@@ -2,6 +2,7 @@ import java.util.HashSet;
 
 public final class TarotCard extends Card {
 	
+	//SPECIFIC TO EACH DECK
 	public static int LIMIT = 78;
 	public static String[] CARDNAMES = new String[]{
 			"The Fool", "The Magician", "The High Priestess", "The Empress", "The Emperor",
@@ -20,9 +21,8 @@ public final class TarotCard extends Card {
 			"Nine of Swords", "Ten of Swords", "Page of Swords", "Knight of Swords", "Queen of Swords", "King of Swords"
 	};
 
-	
+	//CONSTRUCTORS
 	public TarotCard(boolean useReversed) {
-		
 		super(useReversed, LIMIT, CARDNAMES);
 	}
 
@@ -31,6 +31,7 @@ public final class TarotCard extends Card {
 	}
 
 
+	//CREATE MULTIPLE CARDS FOR SPREAD
 	public static TarotCard[] createSpread(int amount, boolean useReversed) {
 
 		TarotCard[] cardSpread = new TarotCard[amount];
@@ -52,7 +53,6 @@ public final class TarotCard extends Card {
 	
 	
 	public static TarotCard[] createSpread(int amount) {
-		
 		return createSpread(amount, false);
 	}
 }

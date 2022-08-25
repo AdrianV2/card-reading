@@ -2,6 +2,7 @@ import java.util.HashSet;
 
 public class GreenWitchCard extends Card {
 
+	//SPECIFIC TO EACH DECK
 	public static int LIMIT = 44;
 	public static String[] CARDNAMES = new String[]{
 			"Carrot", "Pea", "Cos Lettuce", "Cucumber", "Potato", "Broccoli", "Beetroot", "Kent Pumpkin", "Onion",
@@ -12,12 +13,13 @@ public class GreenWitchCard extends Card {
 	};
 	
 	
+	//CONSTRUCTOR
 	public GreenWitchCard() {
-		
 		super(false, LIMIT, CARDNAMES);
 	}
 
 	
+	//CREATE MULTIPLE CARDS FOR SPREAD
 	public static GreenWitchCard[] createSpread(int amount) {
 
 		GreenWitchCard[] cardSpread = new GreenWitchCard[amount];
