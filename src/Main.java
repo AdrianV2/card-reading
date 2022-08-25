@@ -37,12 +37,14 @@ class Main {
 
 					if (cardAmount == 0) run = false;
 					else {
+						
+						System.out.println(System.lineSeparator() +
+								"This deck can show reversed cards. Press y to show reversed cards:");
+						boolean reversedUsed = USERINPUT.readLine().replaceAll("\\s", "").toLowerCase().equals("y");
+						
+						TarotCard[] cardSpread = TarotCard.createSpread(cardAmount, reversedUsed);
 
-						TarotCard[] cardSpread = TarotCard.createSpread(cardAmount, true);
-
-						System.out.println();
-						System.out.println("Here is your card spread:");
-						System.out.println();
+						System.out.println(System.lineSeparator() + "Here is your card spread:" + System.lineSeparator());
 
 
 						for (TarotCard t : cardSpread) {
@@ -63,11 +65,8 @@ class Main {
 					else {
 
 						GreenWitchCard[] cardSpread = GreenWitchCard.createSpread(cardAmount);
-
-						System.out.println();
-						System.out.println("Here is your card spread:");
-						System.out.println();
-
+						
+						System.out.println(System.lineSeparator() + "Here is your card spread:" + System.lineSeparator());
 
 						for (GreenWitchCard g : cardSpread) {
 
@@ -86,23 +85,20 @@ class Main {
 
 				//INVALID INPUT
 				default:
-					System.out.println();
-					System.out.println("That's not an option.");
+					System.out.println(System.lineSeparator() + "That's not an option.");
 				}
 			}
 
 			//ASK TO CONTINUE USING PROGRAM
 			if (run) {
-				System.out.println();
-				System.out.println("If you want to draw more cards then press y:");
+				System.out.println(System.lineSeparator() + "If you want to draw more cards then press y:");
 				if (!USERINPUT.readLine().replaceAll("\\s", "").toLowerCase().equals("y")) run = false;
 				else needsDeck = true;
 				System.out.println();
 			}
 		}
 		
-		System.out.println();
-		System.out.println("Goodbye!");
+		System.out.println(System.lineSeparator() + "Goodbye!");
 	}
 
 
@@ -128,8 +124,7 @@ class Main {
 					if (inputAmount <= limit) {
 						needsAmount = false;
 					} else {
-						System.out.println();
-						System.out.println("Oops! There's not that many cards in the deck.");
+						System.out.println(System.lineSeparator() + "Oops! There's not that many cards in the deck.");
 					}
 				}
 				
@@ -138,10 +133,7 @@ class Main {
 			//ERROR FOUND WITH INPUT
 			catch (Exception e) {
 
-				System.out.println();
-				System.out.println("An error occurred! If you want to try again then press y:");
-
-				System.out.println();
+				System.out.println(System.lineSeparator() + "An error occurred! If you want to try again then press y:");
 
 				//USER DOESN'T WANT TO CONTINUE
 				if (!USERINPUT.readLine().replaceAll("\\s", "").toLowerCase().equals("y")) {
