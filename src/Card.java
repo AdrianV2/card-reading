@@ -1,20 +1,26 @@
 public class Card {
 
-	protected String name = "";
-	protected int cardID = 0;
+	public static int LIMIT = 0;
+	public static String[] CARDNAMES = new String[LIMIT];
+	
+	
+	protected String name;
+	protected int cardID;
 	protected boolean reversed = false;
 	
-	public Card(boolean useReversed, int limit) {
+	public Card(boolean useReversed, int limit, String[] cardNames) {
 		
-		this.cardID = (int)Math.floor(Math.random() * limit);
+		cardID = (int)Math.floor(Math.random() * limit);
+		name = cardNames[cardID];
+		
 		if (useReversed) {
 			reversed = ((int)Math.floor(Math.random() * 2)) == 0;
-			if (reversed) name = " Reversed";
+			if (reversed) name += " Reversed";
 		}
 	}
 	
-	public Card(int limit) {
-		this(false, limit);
+	public Card(int limit, String[] cardNames) {
+		this(false, limit, cardNames);
 	}
 	
 	public String getName() {

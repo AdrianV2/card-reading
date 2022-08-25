@@ -23,8 +23,7 @@ public final class TarotCard extends Card {
 	
 	public TarotCard(boolean useReversed) {
 		
-		super(useReversed, 78);
-		name = CARDNAMES[cardID] + name;
+		super(useReversed, LIMIT, CARDNAMES);
 	}
 
 	public TarotCard() {
@@ -49,5 +48,11 @@ public final class TarotCard extends Card {
 		}
 		
 		return cardSpread;
+	}
+	
+	
+	public static TarotCard[] createSpread(int amount) {
+		
+		return createSpread(amount, false);
 	}
 }
