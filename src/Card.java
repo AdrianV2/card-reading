@@ -27,7 +27,7 @@ public class Card {
 		return name;
 	}
 	
-	public int getCardID() {
+	protected int getCardID() {
 		return cardID;
 	}
 
